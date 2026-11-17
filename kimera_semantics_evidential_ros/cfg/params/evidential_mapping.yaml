@@ -1,0 +1,50 @@
+method: "evidential"
+verbose: true
+semantic_measurement_probability: 0.9  # Likelihood probability of observing a measurement given the prior label
+semantic_color_mode: "semantic"  # Options: "color", "semantic", "semantic_probability", "semantic_evidential"
+semantic_label_2_color_csv_filepath: "/home/rohit/workspace/ros1/kimera_ws/src/swin_mtl_evidential/cfg/scannet22_mod_color_map.csv"  # Path to the CSV file mapping labels to colors
+
+measurement_representation_strategy: "evidential"  # Options: "one_hot", "probability", "evidential"
+voxel_representation_strategy: "evidential"  # Options: "probability", "evidential"
+voxel_fusion_strategy: "tsdf_weighted_uncertainty"  # Options: "none", "simple", "measurement_uncertainty", "tsdf_weighted_uncertainty", "voxel_measurement_uncertainty"
+uncertainty_strategy: "total_uncertainty"  # Options: "none", "total_uncertainty", "variance", "dempster_shafer", "probability_variance", "probability_entropy"
+
+uncertainty_threshold: 0.1  # Threshold for uncertainty-based decision making
+label_assignment_threshold: 0.8  # Threshold for assigning labels based on confidence
+
+use_viewpoint_similarity: true  # Whether to use viewpoint similarity in semantic updates
+use_viewpoint_obliqueness: false  # Whether to use viewpoint obliqueness in semantic updates
+
+
+
+tsdf_voxel_size: 0.05  # Example default value, adjust as needed
+tsdf_voxels_per_side: 8  # Must be a power of 2
+
+use_freespace_pointcloud: false
+sensor_frame: "camera_color_optical_frame"
+world_frame: "world"
+use_tf_transforms: true
+
+enable_icp: false
+
+voxel_carving_enabled: true
+truncation_distance: 0.2  # Example default, adjust as needed
+max_ray_length_m: 8.0
+min_ray_length_m: 0.5
+max_weight: 100.0
+use_const_weight: false
+use_weight_dropoff: true
+allow_clear: true
+start_voxel_subsampling_factor: 2
+max_consecutive_ray_collisions: 3
+clear_checks_every_n_frames: 10
+max_integration_time_s: 0.2
+anti_grazing: true
+use_sparsity_compensation_factor: true
+sparsity_compensation_factor: 1.0
+integration_order_mode: 0
+use_viewpoint_weighting_factor: true
+
+
+mesh_min_weight: 0.1
+mesh_use_color: true
