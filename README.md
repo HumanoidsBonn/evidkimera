@@ -5,7 +5,46 @@ This repository contains the evidential Kimera Semantics component used by
 Its rosinstall files use the project-specific
 [HumanoidsBonn/voxblox](https://github.com/HumanoidsBonn/voxblox) fork.
 
+## What is new in EvidKimera
+
+EvidKimera extends the upstream Kimera-Semantics pipeline with the mapping
+method introduced in the EvidMTL paper. The main additions are:
+
+- propagation of evidential semantic and depth outputs into the mapping
+  pipeline;
+- uncertainty-aware TSDF integration weights for depth observations;
+- evidence-aware semantic fusion and voxel-level uncertainty state; and
+- viewpoint-similarity weighting to reduce repeated reinforcement of
+  correlated observations.
+
+Kimera-Semantics remains the metric-semantic reconstruction foundation, and
+the custom Voxblox fork provides the corresponding voxel, point-cloud, ROS,
+and integrator extensions.
+
 The Kimera BSD-2-Clause license is preserved in [LICENSE.BSD](LICENSE.BSD).
+
+## Citation and attribution
+
+If you use EvidKimera, please cite the EvidMTL paper and the upstream Kimera
+paper:
+
+```bibtex
+@inproceedings{menon2025evidmtl,
+  author={Menon, Rohit and Dengler, Nils and Pan, Sicong and Chenchani, Gokul Krishna and Bennewitz, Maren},
+  title={EvidMTL: Evidential Multi-Task Learning for Uncertainty-Aware Semantic Surface Mapping from Monocular RGB Images},
+  booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2025},
+  doi={10.1109/IROS60139.2025.11247528}
+}
+
+@inproceedings{rosinol2020kimera,
+  author={Rosinol, Antoni and Abate, Marcus and Chang, Yun and Carlone, Luca},
+  title={Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping},
+  booktitle={2020 IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2020},
+  doi={10.1109/ICRA40945.2020.9196885}
+}
+```
 
 ## Kimera-Semantics
 
